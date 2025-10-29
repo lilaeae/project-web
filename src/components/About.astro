@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 const pageTitle = "LILAEEE - ABOUT";
 
@@ -13,29 +14,15 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style>
-      h1 {
-        font-size: 4rem;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>About me</h1>
-    <p>
-      I’m {identity.firstName}[/daɭʲˈiɭa/], a {identity.occupation} with about a
-      year and half of experience in web design. Other than designing, I like to
-      spend my time consuming all kinds of media, usually {identity.hobbies[0]} ,
-      {identity.hobbies[1]}or any other kind of artistic -graphy. My favorite
-      artists include {identity.musicians[0]} , {identity.musicians[1]} && {
-        identity.musicians[2]
-      }
-    </p>
-  </body>
-</html>
+<BaseLayout>
+  <h1>About me</h1>
+  <p>
+    I’m {identity.firstName}[/daɭʲˈiɭa/], a {identity.occupation} with about a year
+    and half of experience in web design. Other than designing, I like to spend my
+    time consuming all kinds of media, usually {identity.hobbies[0]} ,
+    {identity.hobbies[1]}or any other kind of artistic -graphy. My favorite
+    artists include {identity.musicians[0]} , {identity.musicians[1]} && {
+      identity.musicians[2]
+    }
+  </p>
+</BaseLayout>
