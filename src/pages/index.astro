@@ -1,16 +1,27 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>LILAEE</title>
-  </head>
-  <body>
-    <h1>Astro yo</h1>
-  </body>
-</html>
+<BaseLayout>
+  <section class="hero">
+    <h1>HEY, I'M LILA</h1>
+    <p>/ Services</p>
+    <p>Visual designer<br />UX/UI designer</p>
+    <p class="scroll">scroll to explore ↓</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+
+  .scroll {
+    display: flex;
+    margin-top: 3rem;
+    font-size: 1rem;
+    color: #777;
+    justify-content: flex-end;
+  }
+</style>
