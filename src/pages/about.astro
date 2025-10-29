@@ -1,5 +1,15 @@
 ---
+const pageTitle = "LILAEEE - ABOUT";
 
+const identity = {
+  firstName: "LILA",
+  country: "Canada",
+  occupation: "trainee UX/UI designer",
+  hobbies: ["cinematography", "photography"],
+  musicians: ["silica gel", "elliot smith", "malice mizer"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <html lang="en">
@@ -8,9 +18,24 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>LILAEE - ABOUT</title>
+    <title>{pageTitle}</title>
+    <style>
+      h1 {
+        color: white;
+        font-size: 4rem;
+      }
+    </style>
   </head>
   <body>
-    <h1>about</h1>
+    <h1>About me</h1>
+    <p>
+      I’m {identity.firstName}[/daɭʲˈiɭa/], a {identity.occupation} with about a
+      year and half of experience in web design. Other than designing, I like to
+      spend my time consuming all kinds of media, usually {identity.hobbies[0]} ,
+      {identity.hobbies[1]}or any other kind of artistic -graphy. My favorite
+      artists include {identity.musicians[0]} , {identity.musicians[1]} && {
+        identity.musicians[2]
+      }
+    </p>
   </body>
 </html>
