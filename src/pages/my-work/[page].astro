@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/global.css";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }) {
+  // Fetch all projects from the 'my-work' collection
+  // (Assuming you have moved your project-*.md files to src/content/my-work/)
+  const allProjects = await getCollection("my-work");
+
+  // Paginate the results, setting 'pageSize: 1' to show one project item per page.
+  return paginate(allProjects, { pageSize: 1 });
+}
+
+// 2. Receive the 'page' object from Astro.props
+const { page } = Astro.props;
+
+// 3. The current project item for this page (since pageSize is 1)
+const projectItem = page.data[0];
+
+// Use the project item's frontmatter data
+const projectTitle = projectItem.data.title || "My Work Project";
+const projectSubtitle = projectItem.data.subtitle || "LILAEEE - Project";
+// IMPORTANT: Ensure this image path is correct relative to the component or uses an absolute path if in 'public/'
+const projectImage =
+  projectItem.data.image ||
+  "https://placehold.co/400x300/e0e0e0/333333?text=Project+Image";
+
+const pageTitle = `LILAEEE - ${projectTitle}`;
+---
+
+<BaseLayout title={pageTitle}>
+  <section class="my__work padding" id="work">
+    <h2 class="mywork__title--first">My</h2>
+
+    <div class="arrow__container">
+      <!-- Previous Project Link (Conditional) -->
+      <a
+        href={page.url.prev || "#"}
+        aria-label="Previous Project"
+        class:list={[
+          "arrow-link",
+          { "opacity-30 pointer-events-none": !page.url.prev },
+        ]}
+      >
+        <svg
+          class="arrow"
+          xmlns="http://www.w3.org/2000/svg"
+          width="10"
+          height="20"
+          viewBox="0 0 10 20"
+          fill="none"
+        >
+          <path
+            d="M8.38135 0.75L1.02558 9.02524C0.658175 9.43857 0.658174 10.0614 1.02558 10.4748L8.38135 18.75"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
+        </svg>
+      </a>
+
+      <!-- Next Project Link (Conditional) -->
+      <a
+        href={page.url.next || "#"}
+        aria-label="Next Project"
+        class:list={[
+          "arrow-link",
+          { "opacity-30 pointer-events-none": !page.url.next },
+        ]}
+      >
+        <svg
+          class="arrow"
+          xmlns="http://www.w3.org/2000/svg"
+          width="10"
+          height="20"
+          viewBox="0 0 10 20"
+          fill="none"
+        >
+          <path
+            d="M0.75 0.75L8.10577 9.02524C8.47317 9.43857 8.47317 10.0614 8.10577 10.4748L0.75 18.75"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card__title">
+        <p class="card__bodycopy">{projectSubtitle}</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+        >
+          <path
+            d="M11.0041 0.580494C10.9984 0.254272 10.7293 -0.00556743 10.4031 0.000126625L5.08702 0.0929194C4.7608 0.098614 4.50096 0.367685 4.50665 0.693908C4.51235 1.02013 4.78142 1.27997 5.10764 1.27428L9.83307 1.19179L9.91555 5.91722C9.92124 6.24344 10.1903 6.50328 10.5165 6.49759C10.8428 6.49189 11.1026 6.22282 11.0969 5.8966L11.0041 0.580494ZM0.425049 10.9341L0.850012 11.3445L10.8384 1.00119L10.4134 0.590805L9.98847 0.180423L8.57786e-05 10.5237L0.425049 10.9341Z"
+            fill="black"></path>
+        </svg>
+      </div>
+      <div class="card__project">
+        <img
+          class="project__image"
+          src={projectImage}
+          alt={`Image for ${projectTitle}`}
+        />
+        <!-- Display the Markdown content body -->
+        <div class="project__content mt-4 p-4">
+          <h3 class="font-bold text-lg mb-2">{projectTitle}</h3>
+          <projectItem.Content />
+        </div>
+      </div>
+    </div>
+    <h2 class="mywork__title--second">/ Work</h2>
+
+    <!-- Visual indicator of pagination -->
+    <div class="text-center mt-6 text-sm font-semibold">
+      Project {page.currentPage} of {page.lastPage}
+    </div>
+  </section>
+</BaseLayout>
