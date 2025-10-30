@@ -5,24 +5,55 @@ const pageTitle = "LILAEEE - ABOUT";
 
 const identity = {
   firstName: "LILA",
-  country: "Canada",
   occupation: "trainee UX/UI designer",
   hobbies: ["cinematography", "photography"],
-  musicians: ["silica gel", "elliot smith", "malice mizer"],
+  musicians: ["SILICA GEL", "Elliot smith", "Malice Mizer"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <BaseLayout>
-  <h1>About me</h1>
-  <p>
-    I’m {identity.firstName}[/daɭʲˈiɭa/], a {identity.occupation} with about a year
-    and half of experience in web design. Other than designing, I like to spend my
-    time consuming all kinds of media, usually {identity.hobbies[0]} ,
-    {identity.hobbies[1]}or any other kind of artistic -graphy. My favorite
-    artists include {identity.musicians[0]} , {identity.musicians[1]} && {
-      identity.musicians[2]
-    }
-  </p>
+  <section class="about">
+    <h1>About me</h1>
+    <div class="about__description">
+      <div class="about__bodycopy__top">
+        <p class="about__bodycopy">
+          <span class="name__bold">I’m {identity.firstName}[/daɭʲˈiɭa/] </span>, a {identity.occupation} with about
+          a year and half of experience in web design. Other than designing, I like
+          to spend my time consuming all kinds of media, usually {
+            identity.hobbies[0]
+          }
+          <img
+            src="src/assets/camera.png"
+            alt="black camera"
+            class="inline-img"
+          />
+        </p>
+      </div>
+
+      <div class="about__bodycopy__middle">
+        <p class="about__bodycopy">
+          , {identity.hobbies[1]}or any other kind of artistic -graphy. My
+          favorite artists include <em>{identity.musicians[0]} </em>
+          <img
+            src="src/assets/silicagel_icon.png"
+            alt="silica gel pack"
+            class="inline-img"
+          />,
+        </p>
+      </div>
+
+      <div class="about__bodycopy__bottom">
+        <p class="about__bodycopy">
+          {identity.musicians[1]}
+          <img
+            src="src/assets/elliot.png"
+            alt="the figure eight album cover by elliot smith"
+            class="inline-img"
+          /> && {identity.musicians[2]}
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
