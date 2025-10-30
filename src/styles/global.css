@@ -295,28 +295,31 @@ line-height: 140%;
 
  .card__title {
     display: flex;
-    padding: 0 0.48544rem;
+    padding: 0 0.5rem;
     align-items: baseline;
-    gap: 0.48rem;
+    gap: 0.5rem;
     align-self: stretch;
  }
 
  .card__bodycopy {
     font-family: "HelveticaNeue";
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     line-height: normal;
     color:#282828;
  }
 
  .card__project {
     display: flex;
-    padding-top: 9rem;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     align-self: stretch;
     border-radius: 0.5em;
     border: 1px solid #E4E4E4;
+ }
+
+ .project__image {
+    width: 100%;
  }
 
  .mywork__title--first, .mywork__title--second {
@@ -326,13 +329,39 @@ line-height: 140%;
 
  }
 
+
+
  .my__work {
     display: flex;
-    width: 22rem;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
  }
+
+ .arrow__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
+ }
+
+   .mywork__title--first {
+       display: flex;
+       width: 100%;
+       justify-content: flex-start;
+       margin-top: 2rem;
+   }
+
+   .mywork__title--second {
+       display: flex;
+       width: 100%;
+      justify-content: flex-end;
+   }
 
  .crafts__top {
     display: flex;

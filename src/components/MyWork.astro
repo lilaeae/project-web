@@ -5,32 +5,60 @@ const pageTitle = "LILAEEE - PERSONAL CRAFTS";
 ---
 
 <BaseLayout>
-  <section class="crafts">
-    <div class="crafts__top">
-      <div class="crafts__title">
+  <section class="my__work">
+    <h1 class="mywork__title--first">My</h1>
+
+    <div class="arrow__container">
+      <svg
+        class="arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="10"
+        height="20"
+        viewBox="0 0 10 20"
+        fill="none"
+      >
+        <path
+          d="M8.38135 0.75L1.02558 9.02524C0.658175 9.43857 0.658174 10.0614 1.02558 10.4748L8.38135 18.75"
+          stroke="black"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
+      </svg>
+
+      <svg
+        class="arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="10"
+        height="20"
+        viewBox="0 0 10 20"
+        fill="none"
+      >
+        <path
+          d="M0.75 0.75L8.10577 9.02524C8.47317 9.43857 8.47317 10.0614 8.10577 10.4748L0.75 18.75"
+          stroke="black"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
+      </svg>
+    </div>
+
+    <div class="card">
+      <div class="card__title">
+        <p class="card__bodycopy">Silica gel</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
           fill="none"
         >
           <path
-            d="M7.0909 7.0909H0V10.9091H7.0909V18H10.3636V10.9091H18V7.0909H10.3636V0H7.0909V7.0909Z"
+            d="M11.0041 0.580494C10.9984 0.254272 10.7293 -0.00556743 10.4031 0.000126625L5.08702 0.0929194C4.7608 0.098614 4.50096 0.367685 4.50665 0.693908C4.51235 1.02013 4.78142 1.27997 5.10764 1.27428L9.83307 1.19179L9.91555 5.91722C9.92124 6.24344 10.1903 6.50328 10.5165 6.49759C10.8428 6.49189 11.1026 6.22282 11.0969 5.8966L11.0041 0.580494ZM0.425049 10.9341L0.850012 11.3445L10.8384 1.00119L10.4134 0.590805L9.98847 0.180423L8.57786e-05 10.5237L0.425049 10.9341Z"
             fill="black"></path>
         </svg>
-        <h1>Lila's Crafts</h1>
       </div>
-      
-      <p class="crafts__bodycopy">
-        Although slowly transitioned to the digital medium, something I used to
-        entertain myself a lot with was mixed media/collages
-      </p>
+      <div class="card__project">
+        <img class="project__image" src="src/assets/silicagel 1.png" alt="silica gel design project" />
+      </div>
     </div>
-
-    <p class="interests">/ Other interests include</p>
-    <p class="slider__bodycopy">
-      MOTION DESIGN, DIGITAL ART, COLOR GRADING, VIDEO EDITTING
-    </p>
+    <h1 class="mywork__title--second">/ Work</h1>
   </section>
 </BaseLayout>
