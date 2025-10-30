@@ -14,16 +14,15 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <BaseLayout>
-  <section class="about">
+  <section class="about" id="about">
     <h2 class="about__title">About me</h2>
     <div class="about__description">
       <div class="about__bodycopy__top">
         <p class="about__bodycopy">
-          <span class="name__bold">I’m {identity.firstName}[/daɭʲˈiɭa/] </span>, a {identity.occupation} with about
-          a year and half of experience in web design. Other than designing, I like
-          to spend my time consuming all kinds of media, usually {
-            identity.hobbies[0]
-          }
+          <span class="name__bold">I’m {identity.firstName}[/daɭʲˈiɭa/] </span>,
+          a {identity.occupation} with about a year and half of experience in web
+          design. Other than designing, I like to spend my time consuming all kinds
+          of media, usually {identity.hobbies[0]}
           <img
             src="src/assets/camera.png"
             alt="black camera"
