@@ -50,11 +50,11 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 80ch;
-    padding: 1rem;
     line-height: 1.5;
     font-family: 'HelveticaNeueRoman',
     sans-serif;
     background: #F4F4F4;
+    padding: 1rem;
     
 }
 
@@ -253,11 +253,12 @@ li {
     align-items: flex-start;
     gap: 7.5rem;
     margin-top: 2rem;
+    width: 100vw;
+    padding: 4rem 0 0 4rem;
  }
 
  .hero__title { 
     display: flex;
-    width: 22rem;
     flex-direction: column;
     align-items: flex-start;
  }

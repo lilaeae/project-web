@@ -2,43 +2,22 @@
 let menuOpen = false;
 ---
 
-<header class="header">
-  <div class="header__top">
-    <div class="logo">LILAE</div>
-
-    <button class="burger" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-
-  <div id="menu" class="menu-overlay">
-    <nav>
-      <a href="#work">/ MY WORK</a>
-      <a href="#about">/ ABOUT ME</a>
-      <a href="#contact">/ CONTACT</a>
-    </nav>
-    <button class="close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M1 1L19 19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-  <path d="M19 1L1 19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-</svg></button>
-  </div>
-</header>
-
 <style>
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem;
-    position: relative;
+    padding: 1.25rem 0 1.25rem 0; 
+    width: 100vw;
+    position: fixed;
     z-index: 10;
+    background-color: rgba(244, 244, 244, 0.5);
+    backdrop-filter: blur(2px);
   }
 
   .header__top {
     display: flex;
-    gap: 14rem;
+    width: 90vw;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -126,11 +105,50 @@ let menuOpen = false;
     }
   }
 </style>
+<div id="menu" class="menu-overlay">
+  <nav>
+    <a class="link" href="#work">/ MY WORK</a>
+    <a class="link" href="#about">/ ABOUT ME</a>
+    <a class="link" href="#contact">/ CONTACT</a>
+  </nav>
+  <button class="close"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M1 1L19 19"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"></path>
+      <path
+        d="M19 1L1 19"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"></path>
+    </svg></button
+  >
+</div>
+<header class="header">
+  <div class="header__top">
+    <div class="logo">LILAE</div>
+
+    <button class="burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
 
 <script>
   const burger = document.querySelector(".burger");
   const menu = document.getElementById("menu");
   const closeBtn = document.querySelector(".close");
+  const navbarLinks = document.querySelectorAll(".menu-overlay a");
 
   burger?.addEventListener("click", () => {
     burger.classList.toggle("open");
@@ -139,5 +157,11 @@ let menuOpen = false;
 
   closeBtn?.addEventListener("click", () => {
     menu.classList.remove("open");
+  });
+
+  navbarLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("open");
+    });
   });
 </script>
