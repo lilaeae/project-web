@@ -44,7 +44,7 @@ const projects = await getCollection("my-work");
     {
       projects.map((project) => (
         <a href={`/my-work/${project.id}`}>
-          <ProjectCard project={project.data} />
+          <ProjectCard project={project} />
         </a>
       ))
     }

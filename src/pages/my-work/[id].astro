@@ -6,10 +6,10 @@ import ProjectDetails from "../../components/ProjectDetails.astro";
 export async function getStaticPaths() {
   const projects = await getCollection("my-work");
 
-  const paths = projects.map((project, i) => ({
+  const paths = projects.map((project) => ({
     params: { id: project.id },
     props: {
-      project: project.data,
+      project: project,
     },
   }));
 

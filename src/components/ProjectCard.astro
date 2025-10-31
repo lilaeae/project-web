@@ -1,6 +1,14 @@
 ---
-const {project} = Astro.props
+import { Image } from 'astro:assets'; 
+import type { CollectionEntry } from 'astro:content';
 
+interface Props {
+  project: CollectionEntry<'my-work'>; 
+}
+const { project } = Astro.props;
+
+// 💡 Helper for cleaner access:
+const projectData = project.data;
 ---
 
 <style>
@@ -38,15 +46,16 @@ const {project} = Astro.props
     align-self: stretch;
     border-radius: 0.5em;
     border: 1px solid #e4e4e4;
+    overflow: hidden;
   }
 
-  .project__image {
+  .card__project :global(img) {
     width: 100%;
   }
 </style>
-<div class="card">
-  <div class="card__title">
-    <p class="card__bodycopy">{project.title}</p>
+
+<a href={`/my-work/${project.slug}`} class="card"> <div class="card__title">
+    <p class="card__bodycopy">{projectData.title}</p>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="12"
@@ -60,10 +69,16 @@ const {project} = Astro.props
     </svg>
   </div>
   <div class="card__project">
-    <img
-      class="project__image"
-      src={project.image}
-      alt="silica gel design project"
-    />
+    {projectData.image && (
+      <Image
+        src={projectData.image}
+        alt={`Thumbnail for ${projectData.title}`}
+        width={400}
+    height={400}
+    widths={[400, 600]}
+    sizes="(max-width: 600px) 300px, 400px"
+
+      />
+    )}
   </div>
-</div>
+</a>
