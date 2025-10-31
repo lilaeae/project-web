@@ -1,8 +1,16 @@
 ---
-const {project} = Astro.props
+const { project } = Astro.props;
 ---
+
+<style>
+  .details__bodycopy {
+    font-family: "HelveticaNeueRoman", sans-serif;
+    font-size: 1rem;
+    line-height: 140%;
+  }
+</style>
 <section>
-    <h1>{project.title}</h1>
-    <p>{project.subtitle}</p>
-    <img src={project.image}/>
+  <h1>{project.title}</h1>
+  <p class="details__bodycopy">{project.subtitle}</p>
+  <img src={project.image} />
 </section>
