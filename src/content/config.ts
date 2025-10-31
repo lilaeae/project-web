@@ -9,7 +9,6 @@ const myWorkCollection = defineCollection({
   }),
 });
 
-// 2. Define the schema for the 'personal-crafts' collection (for future use or completeness)
 const personalCraftsCollection = defineCollection({
   type: 'content',
   schema: z.object({
