@@ -1,7 +1,8 @@
 ---
+id: 1
 title: "Silica Gel"
 subtitle: "Digital Design Project"
-image: "src/assets/silicagel-band.png"
+image: "src/assets/silicagel 1.png"
 ---
 Silica Gel
 

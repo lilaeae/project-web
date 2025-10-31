@@ -283,46 +283,7 @@ line-height: 140%;
      justify-content: flex-end;
  }
 
- .card {
-    display: flex;
-    width: 20rem;
-    padding: 0.75rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    border-radius: 0.75rem;
-    background: #FEFEFE;
- }
-
- .card__title {
-    display: flex;
-    padding: 0 0.5rem;
-    align-items: baseline;
-    gap: 0.5rem;
-    align-self: stretch;
- }
-
- .card__bodycopy {
-    font-family: "HelveticaNeue";
-    font-size: 1.5rem;
-    line-height: normal;
-    color:#282828;
- }
-
- .card__project {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    align-self: stretch;
-    border-radius: 0.5em;
-    border: 1px solid #E4E4E4;
- }
-
- .project__image {
-    width: 100%;
- }
-
+ 
  .mywork__title--first, .mywork__title--second {
     font-size: 3rem;
     line-height: normal;

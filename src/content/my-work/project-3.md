@@ -1,11 +1,19 @@
 ---
-title: My Third Blog Post
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
-image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "The Astro logo on a dark background with rainbow rays."
-pubDate: 2022-07-15
-tags: ["astro", "learning in public", "setbacks", "community"]
+id: 3
+title: "Silica Gel"
+subtitle: "Digital Design Project"
+image: "src/assets/silicagel 1.png"
 ---
-It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
+Silica Gel
+
+Published on: 2022-07-01
+
+This is the main detailed content about the Silica Gel project. It includes information about the band members, the design process, and the final execution of the work.
+
+Project Details
+
+Concept: The idea was to combine digital aesthetics with organic forms.
+
+Tools: Used Adobe Illustrator and Figma.
+
+Outcome: A successful campaign launch.

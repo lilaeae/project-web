@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "./ProjectCard.astro";
 import "../styles/global.css";
-const pageTitle = "LILAEEE - PERSONAL CRAFTS";
+import { getCollection } from "astro:content";
+const projects = await getCollection("my-work");
 ---
 
 <BaseLayout>
@@ -39,30 +41,13 @@ const pageTitle = "LILAEEE - PERSONAL CRAFTS";
           stroke-linecap="round"></path>
       </svg>
     </div>
-
-    <div class="card">
-      <div class="card__title">
-        <p class="card__bodycopy">Silica gel</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="12"
-          viewBox="0 0 12 12"
-          fill="none"
-        >
-          <path
-            d="M11.0041 0.580494C10.9984 0.254272 10.7293 -0.00556743 10.4031 0.000126625L5.08702 0.0929194C4.7608 0.098614 4.50096 0.367685 4.50665 0.693908C4.51235 1.02013 4.78142 1.27997 5.10764 1.27428L9.83307 1.19179L9.91555 5.91722C9.92124 6.24344 10.1903 6.50328 10.5165 6.49759C10.8428 6.49189 11.1026 6.22282 11.0969 5.8966L11.0041 0.580494ZM0.425049 10.9341L0.850012 11.3445L10.8384 1.00119L10.4134 0.590805L9.98847 0.180423L8.57786e-05 10.5237L0.425049 10.9341Z"
-            fill="black"></path>
-        </svg>
-      </div>
-      <div class="card__project">
-        <img
-          class="project__image"
-          src="src/assets/silicagel 1.png"
-          alt="silica gel design project"
-        />
-      </div>
-    </div>
+    {
+      projects.map((project) => (
+        <a href={`/my-work/${project.id}`}>
+          <ProjectCard project={project.data} />
+        </a>
+      ))
+    }
     <h2 class="mywork__title--second">/ Work</h2>
   </section>
 </BaseLayout>

@@ -1,11 +1,19 @@
 ---
-title: My Second Blog Post
-author: Astro Learner
-description: "After learning some Astro, I couldn't stop!"
-image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "The Astro logo on a dark background with a purple gradient arc."
-pubDate: 2022-07-08
-tags: ["astro", "blogging", "learning in public", "successes"]
+id: 2
+title: "Silica Gel"
+subtitle: "Digital Design Project"
+image: "src/assets/silicagel 1.png"
 ---
-After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+Silica Gel
+
+Published on: 2022-07-01
+
+This is the main detailed content about the Silica Gel project. It includes information about the band members, the design process, and the final execution of the work.
+
+Project Details
+
+Concept: The idea was to combine digital aesthetics with organic forms.
+
+Tools: Used Adobe Illustrator and Figma.
+
+Outcome: A successful campaign launch.
