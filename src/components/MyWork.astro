@@ -9,38 +9,6 @@ const projects = await getCollection("my-work");
 <BaseLayout>
   <section class="my__work padding" id="work">
     <h2 class="mywork__title--first">My</h2>
-
-    <div class="arrow__container">
-      <svg
-        class="arrow"
-        xmlns="http://www.w3.org/2000/svg"
-        width="10"
-        height="20"
-        viewBox="0 0 10 20"
-        fill="none"
-      >
-        <path
-          d="M8.38135 0.75L1.02558 9.02524C0.658175 9.43857 0.658174 10.0614 1.02558 10.4748L8.38135 18.75"
-          stroke="black"
-          stroke-width="1.5"
-          stroke-linecap="round"></path>
-      </svg>
-
-      <svg
-        class="arrow"
-        xmlns="http://www.w3.org/2000/svg"
-        width="10"
-        height="20"
-        viewBox="0 0 10 20"
-        fill="none"
-      >
-        <path
-          d="M0.75 0.75L8.10577 9.02524C8.47317 9.43857 8.47317 10.0614 8.10577 10.4748L0.75 18.75"
-          stroke="black"
-          stroke-width="1.5"
-          stroke-linecap="round"></path>
-      </svg>
-    </div>
     {
       projects.map((project) => (
         <a href={`/my-work/${project.id}`}>
