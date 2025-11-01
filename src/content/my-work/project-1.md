@@ -2,10 +2,5 @@
 id: 1
 title: "Silica Gel"
 subtitle: "A small passion design project I worked on for my favorite rock band"
-image: '../../assets/silicagel 1.png' 
-
-detailImages:
-  - '../../assets/silicagel_main.png'
-  - '../../assets/silicagel_scnd.png'
-  - '../../assets/silicagel_third.png'
+image: "src/assets/silicagel_main.png"
 ---
